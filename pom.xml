@@ -5,9 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>springbootency</name>
-  <description>Spring Boot项目</description>
+  <description>Spring Boot实战开发大全</description>
   <modules>
   	<module>springsecurity</module>
+  	<module>springdata</module>
   </modules>
   
   <!--  配置依赖版本 -->
