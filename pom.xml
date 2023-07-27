@@ -9,6 +9,8 @@
   <modules>
   	<module>springsecurity</module>
   	<module>springdata</module>
+  	<module>springoauth2</module>
+  	<module>springweb</module>
   </modules>
   
   <!--  配置依赖版本 -->
