@@ -92,7 +92,9 @@ public class SecurityConfig {
 				.clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
 				.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
 				.authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
+				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS) //客户端凭证模式
+				.authorizationGrantType(AuthorizationGrantType.IMPLICIT)
+				.authorizationGrantType(AuthorizationGrantType.PASSWORD)
 				.redirectUri("http://127.0.0.1:8080/login/oauth2/code/messaging-client-oidc")
 				.redirectUri("http://localhost:8081/callback").
 				scope(OidcScopes.OPENID).scope(OidcScopes.PROFILE)

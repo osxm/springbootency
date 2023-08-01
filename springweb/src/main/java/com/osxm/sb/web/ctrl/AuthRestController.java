@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthRestController {
 	
 	@RequestMapping("/callback")
-	public String callBack(@RequestParam String code) {
+	public String callBack(@RequestParam(required=false) String code) {
 		return "获取的授权码="+code;
 	}
 

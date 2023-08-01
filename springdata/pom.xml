@@ -7,6 +7,10 @@
 	</parent>
 	<artifactId>springdata</artifactId>
 	<name>springdata</name>
+        <packaging>pom</packaging>
+	<properties>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
 	<description>Spring Data Usage</description>
 	<dependencies>
 		<dependency>
@@ -17,6 +21,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.29</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -40,4 +50,15 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
+	
+	<build>
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+	</plugins>
+<finalName>springdata</finalName>
+
+</build>
 </project>
