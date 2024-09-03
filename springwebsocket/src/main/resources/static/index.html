@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Spring WebSocket Demo</title>  
+    <script src="lib/sockjs.min.js"></script>  
+    <script src="lib/stomp.js"></script>  
+    <script type="text/javascript">  
+        var socket = null;  
+  
+        function connect() {  
+            var socket = new SockJS('/ws');  
+            var stompClient = Stomp.over(socket);  
+  
+            stompClient.connect({}, function (frame) {  
+                // 连接成功后的回调  
+                stompClient.subscribe('/topic/greetings', function (greeting) {  
+                    // 订阅并接收消息                    
+                    showGreeting(greeting.body);  
+                });  
+  
+                stompClient.send("/app/hello", {}, "World");  
+            });  
+        }  
+  
+        function showGreeting(message) {  
+            var greeting = document.getElementById('greeting');  
+            greeting.innerText = message;  
+        }  
+  
+        window.onload = connect;  
+    </script>  
+</head>  
+<body>  
+    <div id="greeting"></div>  
+</body>  
+</html>
