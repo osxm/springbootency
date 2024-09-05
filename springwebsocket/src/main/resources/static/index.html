@@ -6,10 +6,12 @@
     <script src="lib/stomp.js"></script>  
     <script type="text/javascript">  
         var socket = null;  
+
+        var stompClient = null;
   
         function connect() {  
             var socket = new SockJS('/ws');  
-            var stompClient = Stomp.over(socket);  
+            stompClient = Stomp.over(socket);  
   
             stompClient.connect({}, function (frame) {  
                 // 连接成功后的回调  
@@ -28,9 +30,16 @@
         }  
   
         window.onload = connect;  
+
+        function sendName() {  
+            var name = document.getElementById('name').value;  
+            stompClient.send("/app/hello", {}, name);  
+        }
     </script>  
 </head>  
 <body>  
     <div id="greeting"></div>  
+    <input type="text" id="name" placeholder="Your name"/>  
+    <button onclick="sendName()">Send</button>  
 </body>  
 </html>
