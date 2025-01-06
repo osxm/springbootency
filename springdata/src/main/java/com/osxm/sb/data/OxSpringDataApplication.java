@@ -18,26 +18,26 @@ import org.springframework.context.annotation.Bean;
 
 import com.osxm.sb.data.dao.CountryRepository;
 import com.osxm.sb.data.entity.Country;
-
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 @SpringBootApplication
+@EnableEncryptableProperties
 public class OxSpringDataApplication {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(OxSpringDataApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(OxSpringDataApplication.class, args);
 	}
 
-	
-	@Bean
+	// @Bean
 	public CommandLineRunner demo(CountryRepository repository) {
 		return (args) -> {
 			repository.save(new Country("China"));
 			log.info("-------------------------------");
-			 repository.findByName("China").forEach(china -> {
-			        log.info(china.toString());
-			 });
+			repository.findByName("China").forEach(china -> {
+				log.info(china.toString());
+			});
 		};
 	}
 }
