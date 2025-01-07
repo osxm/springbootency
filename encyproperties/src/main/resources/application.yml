@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: encyproperties
+
+  datasource:
+    url: jdbc:mysql://localhost/osxmdb
+    username: root
+    password: ENC(gfsTDJv1lgAfp4q0XcrhMp3+ijj8T2Go/UPdYbPJPXa6PQ==)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: none

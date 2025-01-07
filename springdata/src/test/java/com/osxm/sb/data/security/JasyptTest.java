@@ -19,7 +19,7 @@ public class JasyptTest {
         encryptor.setPassword("oscar");
         // encryptor.setAlgorithm("PBEWithHMACSHA512ANDAES_256"); // 或其他设置的算法
         encryptor.setAlgorithm("PBEWithMD5AndDES");
-        String originalText = "123456";
+        String originalText = "1234567";
         String encryptedText = encryptor.encrypt(originalText);
         System.out.println("Encrypted Text: " + encryptedText);
 

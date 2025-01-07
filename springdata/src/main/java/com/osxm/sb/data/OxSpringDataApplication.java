@@ -21,7 +21,7 @@ import com.osxm.sb.data.entity.Country;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 @SpringBootApplication
-@EnableEncryptableProperties
+// @EnableEncryptableProperties
 public class OxSpringDataApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(OxSpringDataApplication.class);
