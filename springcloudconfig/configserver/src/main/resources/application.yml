@@ -1,0 +1,10 @@
+# application.yml
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/osxm/YML_config.git
+          search-paths: config_files  # Git 仓库中的子目录
